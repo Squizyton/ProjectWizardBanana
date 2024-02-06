@@ -8,7 +8,7 @@
 #include "SpellAbilityBase.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(BlueprintType,ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class PROJECTWIZARDBANANA_API USpellAbilityBase : public UActorComponent
 {
 	GENERATED_BODY()

@@ -12,4 +12,6 @@ void AFireball::Tick(float DeltaSeconds)
 	Location = GetActorForwardVector()* Speed * DeltaSeconds;
 	//Set the Actor Location
 	SetActorLocation(Location);
+
+	UE_LOG(LogTemp, Warning, TEXT("Hello Im a moving Fireball"));
 }
