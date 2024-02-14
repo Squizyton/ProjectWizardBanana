@@ -14,8 +14,9 @@ class PROJECTWIZARDBANANA_API UFireballSpell : public USpellAbilityBase
 {
 	GENERATED_BODY()
 
+	
 
 public:
-	virtual void OnActionDown(TSubclassOf<ASpellProjectile> ProjectileUsed) override;
+	virtual void OnActionDown(TSubclassOf<ASpellProjectile> ProjectileUsed, USceneComponent* SpawnTransform) override;
 	
 };

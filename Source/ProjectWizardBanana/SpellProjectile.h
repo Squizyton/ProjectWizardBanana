@@ -15,7 +15,21 @@ public:
 	// Sets default values for this actor's properties
 	ASpellProjectile();
 
+	UPROPERTY()
+	USceneComponent* Root;
+
+	UPROPERTY(EditAnywhere)
+	UStaticMeshComponent* Mesh;
+
+	UPROPERTY(EditAnywhere)
+	UMaterial* Material;
+
+	
+	UPROPERTY(EditAnywhere)
 	float Speed;
+
+
+
 	
 protected:
 	// Called when the game starts or when spawned

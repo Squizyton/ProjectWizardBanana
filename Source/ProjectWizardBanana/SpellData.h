@@ -42,10 +42,10 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Ability Attributes")
 	int manaCost;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly,Category = "Elements",meta=(Bitmask,BitmaskEnum=SpellElement))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly,Category = "Elements",meta=(Bitmask,BitmaskEnum="/Script/ProjectWizardBanana.SpellElement"))
 	int elementType;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly,Category = "Elements",meta=(Bitmask,BitmaskEnum=SpellElement))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly,Category = "Elements",meta=(Bitmask,BitmaskEnum="/Script/ProjectWizardBanana.SpellElement"))
 	int affectedByType;
 	
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category= "Projectile")

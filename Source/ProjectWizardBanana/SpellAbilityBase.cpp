@@ -36,9 +36,10 @@ void USpellAbilityBase::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 	// ...
 }
 
-void USpellAbilityBase::OnActionDown(TSubclassOf<ASpellProjectile> projectileUsed)
+void USpellAbilityBase::OnActionDown(TSubclassOf<ASpellProjectile> ProjectileUsed, USceneComponent* SpawnPosition)
 {
 }
+
 
 
 void USpellAbilityBase::OnActionUp()

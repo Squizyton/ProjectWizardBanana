@@ -6,13 +6,24 @@
 #include "Fireball.h"
 #include "Kismet/GameplayStatics.h"
 
-void UFireballSpell::OnActionDown(const TSubclassOf<ASpellProjectile> ProjectileUsed)
+void UFireballSpell::OnActionDown(const TSubclassOf<ASpellProjectile> ProjectileUsed, USceneComponent* SpawnTransform)
 {
-	Super::OnActionDown(ProjectileUsed);
+	Super::OnActionDown(ProjectileUsed,SpawnTransform);
 
-	UWorld* world = GetWorld();
-	FRotator rotator;
-	world->SpawnActor<AFireball>(AFireball::StaticClass(), world->GetFirstPlayerController()->K2_GetActorLocation(),
-	                             rotator);
-	UE_LOG(LogTemp, Warning, TEXT("Hello I Spawned Something"));
+	try
+	{
+		UWorld* World = GetWorld();
+		const FRotator Rotator = SpawnTransform->GetComponentRotation();
+
+		//Grab the Projectile Class That we are using
+		UClass* ClassToSpawn = ProjectileUsed.Get();
+		
+		World->SpawnActor<ASpellProjectile>(ClassToSpawn, SpawnTransform->GetComponentLocation(),
+									 Rotator);
+	}
+	catch (...)
+	{
+		UE_LOG(LogTemp,Error, TEXT("COULD NOT CAST"))
+	}
+	
 }

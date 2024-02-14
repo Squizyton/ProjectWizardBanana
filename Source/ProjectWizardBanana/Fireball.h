@@ -14,6 +14,7 @@ class PROJECTWIZARDBANANA_API AFireball : public ASpellProjectile
 {
 	GENERATED_BODY()
 
+	AFireball();
 public:
 	virtual void Tick(float DeltaSeconds) override;
 

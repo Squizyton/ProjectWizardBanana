@@ -23,7 +23,7 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	UFUNCTION(BlueprintCallable)
-	virtual void OnActionDown(TSubclassOf<class ASpellProjectile> projectileUsed);
+	virtual void OnActionDown(TSubclassOf<class ASpellProjectile> ProjectileUsed,USceneComponent* SpawnPosition);
 	UFUNCTION(BlueprintCallable)
 	virtual void OnActionUp();
 };
