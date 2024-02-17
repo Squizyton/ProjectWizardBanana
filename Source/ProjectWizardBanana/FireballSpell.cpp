@@ -10,11 +10,14 @@ void UFireballSpell::OnActionDown(const TSubclassOf<ASpellProjectile> Projectile
 {
 	Super::OnActionDown(ProjectileUsed,SpawnTransform);
 
+	
 	try
 	{
 		UWorld* World = GetWorld();
-		const FRotator Rotator = SpawnTransform->GetComponentRotation();
 
+		
+		const FRotator Rotator = SpawnTransform->GetComponentRotation();
+		
 		//Grab the Projectile Class That we are using
 		UClass* ClassToSpawn = ProjectileUsed.Get();
 		

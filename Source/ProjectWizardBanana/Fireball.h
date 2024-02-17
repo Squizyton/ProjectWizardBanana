@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "SpellProjectile.h"
+#include "Components/SphereComponent.h"
 #include "Fireball.generated.h"
 
 /**
@@ -16,7 +17,13 @@ class PROJECTWIZARDBANANA_API AFireball : public ASpellProjectile
 
 	AFireball();
 public:
+	UPROPERTY(EditAnywhere)
+	USphereComponent* SphereComponent;
+	
 	virtual void Tick(float DeltaSeconds) override;
-
+	virtual void BeginPlay() override;
+	virtual bool GeneratePrimitiveComponent() override;
+	virtual void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
+	
 	
 };
